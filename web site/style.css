@@ -70,6 +70,7 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
     background-color: rgb(65, 63, 63);
     color: rgba(240, 248, 255, 0.856);
 }
+
 .footer span{line-height: 27px;} 
 
 table {
@@ -93,6 +94,7 @@ table {
     width: 70px;
     background-color: coral;
 }
+
 select{
     color:azure !important;
     background-color: rgb(49, 48, 48) !important;
