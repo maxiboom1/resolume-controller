@@ -112,10 +112,6 @@ function postRequest(url){
   xhttp.send();
 }
 
-
-
-
-
 // var toggler = document.getElementsByClassName("caret");
 // var i;
 
