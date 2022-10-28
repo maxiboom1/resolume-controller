@@ -2,7 +2,7 @@
 
 ## Table of Contents
   1. [Introduction](#introduction)
-  2. [Resolume_basics](#Resolume_basics)
+  2. [Resolume basics](#Resolume basics)
   3. [Concepts](#concepts)
   4. [Sources](#Sources)
   
@@ -15,7 +15,7 @@ Our goal here is to create an intuitive and simple tool to manage media on diffe
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Resolume_basics**
+## **Resolume basics**
 ### Understanding Decks, columns, layers and clips
 Resolume may have unlimited numbers of decks. Each deck is like new instance of program (like new tab in browsers). So, using decks we can manage differend shows and media sets. Each layer can be connected to different output, and generally used to play clips to some screen, or part of screen (window in screen). 
 
