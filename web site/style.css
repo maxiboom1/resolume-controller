@@ -52,6 +52,7 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
     background-color: rgb(80, 78, 78);
     color: rgba(240, 248, 255, 0.856);
 
+
 }
 .playlist span{margin-left: 20px; margin-bottom: 20px;} 
 
@@ -62,6 +63,7 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
     height: 890px;
     background-color: rgb(100, 99, 99);
     color: rgba(240, 248, 255, 0.856);
+    padding: 10px;
 
 }
 
@@ -102,10 +104,10 @@ thead tr{
     background-color: coral;
 }
 
-select{
+/* select{
     color:azure !important;
     background-color: rgb(49, 48, 48) !important;
-}
+} */
 
 .selected {
   background-color: blue !important;

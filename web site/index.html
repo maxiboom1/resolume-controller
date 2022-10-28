@@ -15,10 +15,37 @@
     </div>
     
     <div class="selections">
-      <h5>Select deck</h5>
-      <div class="decks">
-        <select class="form-select form-select-sm mb-3"></select>
-      </div>  
+      
+      <form>
+        <div class="decks">
+          <label for="deck_selector">Select program (deck)</label>
+          <select class="form-select" id="deck_selector"></select>
+        </div> 
+        
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="item_name">Item name</label>
+          <input type="email" class="form-control" id="item_name" placeholder="Enter item name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form> 
     </div>
 
     <div class="playlist">

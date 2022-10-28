@@ -14,13 +14,17 @@ postRequest('http://localhost:8080/api/v1/composition/decks/' + event.target.val
 }
 
 function highlight(e) {
-  if(e.target.parentNode.nodeName != "TABLE"){ // handle bug while user clics between table cells  and selects all rows
-    
-    if (selected[0] != null) {selected[0].className = '';} // handle first selection, while select class doen't assign 
-    e.target.parentNode.className = 'selected';
-
-  }
   
+  if(e.target.parentNode.nodeName != "TABLE"){ //all rows select bug handler
+    
+    if (selected[0]) { // handle first selection, while select class doen't assign 
+      selected[0].className = '';
+    } 
+    
+    e.target.parentNode.className = 'selected';
+  
+  }
+
 }
 
 function getRequest(url){
@@ -48,7 +52,7 @@ function buildDecks(decks, selectedDeck){
   
   //Create select el + add classes
   const selectEl = document.createElement('select')
-  selectEl.classList.add("form-select", "form-select-sm", "mb-3")
+  selectEl.classList.add("form-select", "mb-3")
 
   let deckListHTML = '';
   let index = 1;
