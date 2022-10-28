@@ -6,7 +6,12 @@ selectDecks.addEventListener('change', handleDeckSelect);
 table.addEventListener('click',highlight);
 document.querySelector("form").addEventListener('submit', handleSubmit);
 let playlist = [
-{item_name: '', preset_selector: '', form_file: ''}
+{item_name: '', preset_selector: '1', form_file: '',clip_index: '3'},
+{item_name: '', preset_selector: '3', form_file: '',clip_index: '3'},
+{item_name: '', preset_selector: '2', form_file: '',clip_index: '3'},
+{item_name: '', preset_selector: '1', form_file: '',clip_index: '4'},
+{item_name: '', preset_selector: '1', form_file: '',clip_index: '5'},
+
 ];
 
 getRequest(get_composition);
