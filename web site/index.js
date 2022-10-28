@@ -5,10 +5,37 @@ const selected = table.getElementsByClassName('selected');
 selectDecks.addEventListener('change', handleDeckSelect);
 table.addEventListener('click',highlight);
 document.querySelector("form").addEventListener('submit', handleSubmit);
-let playlist = [];
+let playlist = [
+{item_name: '', preset_selector: '', form_file: ''}
+];
 
 getRequest(get_composition);
 
+buildPresets();
+
+// ---------------- on load ---------------- //
+
+function buildPresets(){
+  
+  const selectEl = document.createElement('select')
+  selectEl.classList.add("form-select")
+  selectEl.setAttribute("name", "preset_selector"); 
+
+  let presetListHTML = '';
+  let index = 1;
+  for(const preset of presets){
+    presetListHTML += `<option value=${index}>${preset}</option>`;
+    index++
+  }
+  selectEl.innerHTML = presetListHTML;
+  renderPresets(selectEl);
+}
+
+function renderPresets(selectEl){
+  const presetDiv = document.querySelector('.presets_container');
+  presetDiv.innerHTML = '';
+  presetDiv.appendChild(selectEl);
+}
 // ---------------- add to form ---------------- //
 
 function handleSubmit(event){
@@ -29,10 +56,17 @@ function parseFormData(event){
 }
 
 function addToPlaylist(item){
-  console.log(item);
+  console.log(item); // {item_name: '', preset_selector: '', form_file: ''}
   //update_playlist_array
   //Cue media on resolume
   //Render table 
+}
+
+function updatePlaylistArr(item){
+  
+  for(item in playlist){
+
+  }
 }
 // ---------------- table selection ---------------- //
 function highlight(e) {
@@ -67,7 +101,6 @@ function getRequest(url){
 }
 
 function compositionParser(composition){
-  console.log(composition)
   const decks = [];
   let selectedDeck;
   let index = 1;
@@ -95,10 +128,8 @@ function buildDecks(decks, selectedDeck){
     index++
   }
   selectEl.innerHTML = deckListHTML;
-  selectEl.value = selectedDeck;
-  console.log("index = : " + selectedDeck)
+  selectEl.value = selectedDeck; // Set deck that active in Resolume
   renderDecks(selectEl);
-
 }
 
 function renderDecks(selectEl){
