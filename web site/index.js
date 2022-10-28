@@ -1,7 +1,7 @@
 const selectDecks = document.querySelector('.decks');
 selectDecks.addEventListener('change', handleDeckSelect);
 
-const table = document.querySelector('table')
+const table = document.querySelector('tbody')
 table.addEventListener('click',highlight);
 const selected = table.getElementsByClassName('selected');
 
@@ -11,12 +11,16 @@ getRequest(get_composition);
 function handleDeckSelect(event){
 console.log(event.target.value)
 postRequest('http://localhost:8080/api/v1/composition/decks/' + event.target.value + '/select');
-
 }
 
 function highlight(e) {
-  if (selected[0]) selected[0].className = '';
-  e.target.parentNode.className = 'selected';
+  if(e.target.parentNode.nodeName != "TABLE"){ // handle bug while user clics between table cells  and selects all rows
+    
+    if (selected[0] != null) {selected[0].className = '';} // handle first selection, while select class doen't assign 
+    e.target.parentNode.className = 'selected';
+
+  }
+  
 }
 
 function getRequest(url){

@@ -74,9 +74,16 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
 .footer span{line-height: 27px;} 
 
 table {
-    /* margin-left:10px; */
-    height: 300px ;    
+  margin-left:20px; 
+  width: 100%;
+  height: auto ; 
+  background-color: rgb(150, 134, 116);   
 }
+ table tr {
+  height: 100px;
+} 
+thead tr{
+  height: 40px;}
 
 .control_buttons{
     position: absolute;
