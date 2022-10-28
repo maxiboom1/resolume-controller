@@ -1,0 +1,1 @@
+const RESOLUME_ADDR = "localhost";

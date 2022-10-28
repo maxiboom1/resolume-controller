@@ -1,18 +1,19 @@
 const selectDecks = document.querySelector('.decks');
-selectDecks.addEventListener('change', handleDeckSelect);
-
-const table = document.querySelector('tbody')
-table.addEventListener('click',highlight);
+const get_composition = 'http://' + RESOLUME_ADDR + ':8080/api/v1/composition';
+const table = document.querySelector('tbody');
 const selected = table.getElementsByClassName('selected');
 
-const get_composition = 'http://localhost:8080/api/v1/composition';
+
+selectDecks.addEventListener('change', handleDeckSelect);
+table.addEventListener('click',highlight);
+
+
 getRequest(get_composition);
 
-function handleDeckSelect(event){
-console.log(event.target.value)
-postRequest('http://localhost:8080/api/v1/composition/decks/' + event.target.value + '/select');
-}
 
+
+
+// ---------------- table selection ---------------- //
 function highlight(e) {
   
   if(e.target.parentNode.nodeName != "TABLE"){ //all rows select bug handler
@@ -25,6 +26,13 @@ function highlight(e) {
   
   }
 
+}
+
+// ---------------- Deck selection ---------------- //
+
+function handleDeckSelect(event){
+console.log(event.target.value)
+postRequest('http://localhost:8080/api/v1/composition/decks/' + event.target.value + '/select');
 }
 
 function getRequest(url){
@@ -82,6 +90,10 @@ function postRequest(url){
   xhttp.open("POST", url);
   xhttp.send();
 }
+
+
+
+
 
 // var toggler = document.getElementsByClassName("caret");
 // var i;
