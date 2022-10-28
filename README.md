@@ -3,7 +3,7 @@
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Resolume_basics](#Resolume_basics)
-  3. [Concepts](#concepts)
+  3. [Aplication detail design](#Aplication detail design)
   4. [Sources](#Sources)
   
 
@@ -21,11 +21,22 @@ Resolume can have unlimited numbers of decks. Each deck is like new instance of 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Concepts
+## Aplication detail design
 ### Single page, vanilla-js app.
 
 First, lets characterize the app features:
 1. The user will be able to select resolume deck - the selec list will be synced with Resolume decks. Select event will actually change decks in Resolume.
+2. The user will be able to choose preset from preset list - each  preset represent Resolume layer.
+3. The user will be able to set name to the playlist item.
+4. The user will be able to choose media item.
+5. When the user click "Add" (submit) button, the preset, item name, media will be added to playlist. Also, "Add" action will cue the media on precofigured range of clip slots, say 3-20 - that means the app will manage those media slots automatically. 
+6. Each lineup item can be removed - it also uncue media in Resolume.
+7. The app will have playlist control interface - GTOT START, PLAY, PREV, NEXT. 
+8. Resolume API provide url with media thumbnail to each cued clip - so we need to include that thumbnail for each playlist item.
+9. Resolume have limitation - you cannot edit not active deck - so we need to handle case that deck has been changed from resolume UI - in that case we need to notice warning msg in our app.
+
+EXTRA:
+1. Preconfigured presets
 
 
 
