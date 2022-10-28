@@ -21,8 +21,8 @@ Resolume can have unlimited numbers of decks. Each deck is like new instance of 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Aplication detail design
-### Single page, vanilla-js app.
+## Aplication characterize
+### Detail design
 
 First, lets characterize the app features:
 1. The user will be able to select resolume deck - the selec list will be synced with Resolume decks. Select event will actually change decks in Resolume.
@@ -37,10 +37,10 @@ First, lets characterize the app features:
 
 EXTRA:
 1. Preconfigured presets
-
-
-
-
+2. Integration with newsroom production systems - Avid Inews, Ross Inception, Octopus.
+3. Config page - with Resolume addres field, clip range setting, set media folder, create new template etc...
+4. View the files in media folder as tree (without selecting files from "choose file" html form element).
+5. Do the same app with node.js/react.
 
 For version 1, it should be single page app, 
 and using fetch/ajax it will send API requests and parse the responses on page.
