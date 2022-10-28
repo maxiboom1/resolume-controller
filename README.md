@@ -15,19 +15,19 @@ Our goal here is to create an intuitive and simple tool to manage media on diffe
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Resolume_basics**
+## Resolume_basics
 ### Understanding Decks, columns, layers and clips
-Resolume may have unlimited numbers of decks. Each deck is like new instance of program (like new tab in browsers). So, using decks we can manage differend shows and media sets. Each layer can be connected to different output, and generally used to play clips to some screen, or part of screen (window in screen). 
+Resolume can have unlimited numbers of decks. Each deck is like new instance of program (like new tab in browsers). So, using decks we can manage differend shows and media sets. Each layer can be connected to different output, and generally used to play clips to some screen, or part of screen (window in screen). 
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Concepts**
+## Concepts
 ### Single page, vanilla-js app.
 For version 1, it should be single page app, and using fetch/ajax it will send API requests and parse the responses on page.
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Sources**
+## Sources
 ### Understanding Resolume UI, API
 Resolume API reference: https://resolume.com/docs/restapi/
 
