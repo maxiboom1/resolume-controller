@@ -37,14 +37,13 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
   justify-content: space-evenly;
   align-items: stretch;
   display: flex;
-  height: 40px;
-  top:500px;
-  background-color: rgb(80, 78, 78);
+  height: 50px;
+  top:470px;
 }
 
 .control_buttons button{
   width: 70px;
-  background-color: coral;
+  background-color: rgb(228, 240, 245);
 }
 /* ----------------- PLAYLIST ----------------- */
 
