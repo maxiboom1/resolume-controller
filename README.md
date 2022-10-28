@@ -2,7 +2,7 @@
 
 ## Table of Contents
   1. [Introduction](#introduction)
-  2. [Resolume_basics](#Resolume basics)
+  2. [Resolume_basics](#Resolume_basics)
   3. [Concepts](#concepts)
   4. [Sources](#Sources)
   
