@@ -60,9 +60,14 @@ function getRequest(url){
   fetch(url)
   .then((response) => response.json())
   .then((data) => compositionParser(data))
+  .catch(error => {
+    alert(error)
+  })
+
 }
 
 function compositionParser(composition){
+  console.log(composition)
   const decks = [];
   let selectedDeck;
   let index = 1;
