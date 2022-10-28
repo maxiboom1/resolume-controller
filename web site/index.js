@@ -2,17 +2,38 @@ const selectDecks = document.querySelector('.decks');
 const get_composition = 'http://' + RESOLUME_ADDR + ':8080/api/v1/composition';
 const table = document.querySelector('tbody');
 const selected = table.getElementsByClassName('selected');
-
-
 selectDecks.addEventListener('change', handleDeckSelect);
 table.addEventListener('click',highlight);
-
+document.querySelector("form").addEventListener('submit', handleSubmit);
+let playlist = [];
 
 getRequest(get_composition);
 
+// ---------------- add to form ---------------- //
 
+function handleSubmit(event){
+    event.preventDefault();
+    const newItem = parseFormData(event);
+    event.target.reset();
+    addToPlaylist(newItem);
+}
 
+function parseFormData(event){
+  const formData = new FormData(event.target);
+  const newItem = {};
+  for (const [key, value] of formData) {
+    if(key == "form_file"){newItem[key] = value.name;} // handle file obj and parse its name
+    else{ newItem[key] = value; }
+  }
+  return newItem;
+}
 
+function addToPlaylist(item){
+  console.log(item);
+  //update_playlist_array
+  //Cue media on resolume
+  //Render table 
+}
 // ---------------- table selection ---------------- //
 function highlight(e) {
   
