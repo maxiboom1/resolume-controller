@@ -3,7 +3,7 @@
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Resolume_basics](#Resolume_basics)
-  3. [Aplication characterize](#Aplication_characterize)
+  3. [Aplication_characterize](#Aplication_characterize)
   4. [Sources](#Sources)
   
 
@@ -21,7 +21,7 @@ Resolume can have unlimited numbers of decks. Each deck is like new instance of 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Aplication characterize
+## Aplication_characterize
 ### Detail design
 
 First, lets characterize the app features:
