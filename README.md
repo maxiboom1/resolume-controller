@@ -1,4 +1,4 @@
-# Resolume-controller
+# Resolume-controller - In progress
 
 ## Table of Contents
   1. [Introduction](#introduction)
