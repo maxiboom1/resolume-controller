@@ -5,14 +5,7 @@ const selected = table.getElementsByClassName('selected');
 selectDecks.addEventListener('change', handleDeckSelect);
 table.addEventListener('click',highlight);
 document.querySelector("form").addEventListener('submit', handleSubmit);
-let playlist = [
-{item_name: '', preset_selector: '1', form_file: '',clip_index: '3'},
-{item_name: '', preset_selector: '3', form_file: '',clip_index: '3'},
-{item_name: '', preset_selector: '2', form_file: '',clip_index: '3'},
-{item_name: '', preset_selector: '1', form_file: '',clip_index: '4'},
-{item_name: '', preset_selector: '1', form_file: '',clip_index: '5'},
-
-];
+let playlist = [];
 
 getRequest(get_composition);
 
@@ -41,7 +34,7 @@ function renderPresets(selectEl){
   presetDiv.innerHTML = '';
   presetDiv.appendChild(selectEl);
 }
-// ---------------- add to form ---------------- //
+// ---------------- add to playlist ---------------- //
 
 function handleSubmit(event){
     event.preventDefault();
@@ -62,17 +55,49 @@ function parseFormData(event){
 
 function addToPlaylist(item){
   console.log(item); // {item_name: '', preset_selector: '', form_file: ''}
-  //update_playlist_array
+  updatePlaylistArray(item);
   //Cue media on resolume
   //Render table 
 }
 
-function updatePlaylistArr(item){
-  
-  for(item in playlist){
-
-  }
+function updatePlaylistArray(item){
+  const clipPos = assignClipPosition(item);
+  playlist.push({'item_name': item.item_name, 'preset_selector': item.preset_selector, 'form_file': item.form_file, 'clip_index': clipPos})
+  postRequest('http://localhost:8080/api/v1/composition/layers/' + item.preset_selector + '/clips/' + clipPos + '/open', MEDIA_FOLDER + item.form_file);
 }
+
+function assignClipPosition(newItem){
+  const indexesArr = [];
+  let clip_index = 0;
+  
+  // run over playlist global arr, filter only current preset_selector,build new arr with clip_indexes
+  for(const item of playlist){
+    if(newItem.preset_selector == item.preset_selector){
+      indexesArr.push(Number(item.clip_index));
+      }
+  }
+  // If current preset (layer) was submitted first time - set it to start position
+  if(indexesArr.length == 0){
+    return CLIP_RANGE_START;
+  }
+
+  // find free media position
+  for(let i = 0; i< indexesArr.length; i++){ 
+    if (!indexesArr.includes(i+CLIP_RANGE_START)){
+      clip_index = i+CLIP_RANGE_START; 
+      break;
+    }
+  }
+  // if array was without holes- assign last.pos+1 index (next one)
+  if(clip_index == 0){
+    clip_index = indexesArr[indexesArr.length-1] + 1;
+  }
+  
+  return clip_index;
+
+}
+
+
 // ---------------- table selection ---------------- //
 function highlight(e) {
   
@@ -143,14 +168,14 @@ function renderDecks(selectEl){
   selectionsDiv.appendChild(selectEl);
 }
 
-function postRequest(url){
+function postRequest(url, body = ''){
 
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     console.log(this.responseText);
   }
   xhttp.open("POST", url);
-  xhttp.send();
+  xhttp.send(body);
 }
 
 // var toggler = document.getElementsByClassName("caret");
