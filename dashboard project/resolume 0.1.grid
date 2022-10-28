@@ -41,6 +41,9 @@ ogscript.asyncHTTP('http://localhost:8080/api/v1/composition', "GET", "applicati
 
 var data = '{"id":1666290791234,"name":{"valuetype":"ParamString","id":1666290791235,"value":"ebanniNasos"},"colorid":{"id":1666290791236,"valuetype":"ParamChoice","value":"1","index":0,"options":["1","2","3","4","5","6"]},"selected":{"id":1666290791237,"valuetype":"ParamTrigger","value":true},"scrollx":{"valuetype":"ParamNumber","id":1666290791239,"value":0}}';
 
-ogscript.asyncHTTP('http://localhost:8080/api/v1/composition/decks/1', "PUT", "application/json" , data, cb);</task>
+//ogscript.asyncHTTP('http://localhost:8080/api/v1/composition/decks/1', "PUT", "application/json" , data, cb);
+ogscript.asyncHTTP('http://localhost:8080/api/v1/composition/decks/by-id/1666811368897/select', "POST", "application/json" , null, cb);
+//                                              /composition/decks/by-id/1666811368897/select
+//ogscript.asyncHTTP('http://localhost:3001', "POST", "application/json" , null, cb);</task>
    </button>
 </abs>
