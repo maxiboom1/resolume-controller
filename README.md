@@ -3,7 +3,7 @@
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Resolume_basics](#Resolume_basics)
-  3. [Aplication detail design](#Aplication_detail_design)
+  3. [Aplication characterize](#Aplication characterize)
   4. [Sources](#Sources)
   
 
