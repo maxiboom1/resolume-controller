@@ -55,15 +55,19 @@ function parseFormData(event){
 
 function addToPlaylist(item){
   console.log(item); // {item_name: '', preset_selector: '', form_file: ''}
-  updatePlaylistArray(item);
-  //Cue media on resolume
+  const mediaPosition = assignClipPosition(item); // find position for the new item
+  updatePlaylistArray(item,mediaPosition);
+  cueMediaclip(item,mediaPosition);
   //Render table 
+  //fetch thumbnail && render it
 }
 
-function updatePlaylistArray(item){
-  const clipPos = assignClipPosition(item);
-  playlist.push({'item_name': item.item_name, 'preset_selector': item.preset_selector, 'form_file': item.form_file, 'clip_index': clipPos})
-  postRequest('http://localhost:8080/api/v1/composition/layers/' + item.preset_selector + '/clips/' + clipPos + '/open', MEDIA_FOLDER + item.form_file);
+function updatePlaylistArray(item,mediaPosition){
+  playlist.push({'item_name': item.item_name, 'preset_selector': item.preset_selector, 'form_file': item.form_file, 'clip_index': mediaPosition})
+}
+
+function cueMediaclip(item,mediaPosition){
+  postRequest('http://localhost:8080/api/v1/composition/layers/' + item.preset_selector + '/clips/' + mediaPosition + '/open', MEDIA_FOLDER + item.form_file);
 }
 
 function assignClipPosition(newItem){
@@ -96,7 +100,6 @@ function assignClipPosition(newItem){
   return clip_index;
 
 }
-
 
 // ---------------- table selection ---------------- //
 function highlight(e) {
