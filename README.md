@@ -3,7 +3,7 @@
 ## Table of Contents
   1. [Introduction](#introduction)
   2. [Resolume_basics](#Resolume_basics)
-  3. [Aplication detail design](#Aplication_detail_design)
+  3. [Aplication_characterize](#Aplication_characterize)
   4. [Sources](#Sources)
   
 
@@ -21,7 +21,7 @@ Resolume can have unlimited numbers of decks. Each deck is like new instance of 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Aplication characterize
+## Aplication_characterize
 ### Detail design
 
 First, lets characterize the app features:
@@ -36,7 +36,7 @@ First, lets characterize the app features:
 9. Resolume API provide url with media thumbnail to each cued clip - so we need to include that thumbnail for each playlist item.
 10. Resolume have limitation - you cannot edit not active deck - so we need to handle case that deck has been changed from resolume UI - in that case we need to notice warning msg in our app.
 
-EXTRA:
+### Extra features:
 1. Preconfigured presets
 2. Integration with newsroom production systems - Avid Inews, Ross Inception, Octopus.
 3. Config page - with Resolume addres field, clip range setting, set media folder, create new template etc...
