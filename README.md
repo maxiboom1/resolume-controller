@@ -23,7 +23,18 @@ Resolume can have unlimited numbers of decks. Each deck is like new instance of 
 
 ## Concepts
 ### Single page, vanilla-js app.
-For version 1, it should be single page app, and using fetch/ajax it will send API requests and parse the responses on page.
+
+First, lets characterize the app features:
+1. The user will be able to select resolume deck - the selec list will be synced with Resolume decks. Select event will actually change decks in Resolume.
+
+
+
+
+
+For version 1, it should be single page app, 
+and using fetch/ajax it will send API requests and parse the responses on page.
+We got three main methods in API - GET, PUT, POST.
+ 
 
 **[⬆ back to top](#table-of-contents)**
 
