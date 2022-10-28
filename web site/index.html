@@ -17,20 +17,21 @@
     <div class="selections">
       
       <form>
-        <div class="decks">
-          <label for="deck_selector">Select program (deck)</label>
-          <select class="form-select" id="deck_selector"></select>
-        </div> 
-        
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Example select</label>
+          <label for="deck_selector">Select program (deck)</label>
+          <div class="decks">
+          <select class="form-select" id="deck_selector"></select>
+          </div>
+          <div class="form-group">
+          <label for="exampleFormControlSelect1">Select preset</label>
           <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option>Big window - rigth</option>
+            <option>Table boker</option>
+            <option>Window left</option>
             <option>4</option>
             <option>5</option>
           </select>
+        </div>
         </div>
         <div class="form-group">
           <label for="item_name">Item name</label>
@@ -46,6 +47,12 @@
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
       </form> 
+      <div class="control_buttons">
+        <button>Play</button>
+        <button>Add</button>
+        <button>Next</button>
+        <button>Prev</button>
+    </div>  
     </div>
 
     <div class="playlist">
@@ -102,18 +109,32 @@
                 <td>Otto</td>
                 <td>@mdo</td>
               </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
             </tbody>
           </table>
-        <div class="control_buttons">
-            <button>Play</button>
-            <button>Add</button>
-            <button>Next</button>
-            <button>Prev</button>
-        </div>  
+
     </div>
 
     <div class="footer">
-     <span>footer</span>   
+     <span>Status:</span>   
     </div>
     
     <div class="fs_tree">

@@ -52,7 +52,7 @@ function buildDecks(decks, selectedDeck){
   
   //Create select el + add classes
   const selectEl = document.createElement('select')
-  selectEl.classList.add("form-select", "mb-3")
+  selectEl.classList.add("form-select")
 
   let deckListHTML = '';
   let index = 1;
