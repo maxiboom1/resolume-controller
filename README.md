@@ -22,7 +22,7 @@ Resolume may have unlimited numbers of decks. Each deck is like new instance of 
 **[⬆ back to top](#table-of-contents)**
 
 ## **Concepts**
-### Semi-header
+### Single page, vanilla-js app.
 For version 1, it should be single page app, and using fetch/ajax it will send API requests and parse the responses on page.
 
 **[⬆ back to top](#table-of-contents)**
@@ -30,6 +30,7 @@ For version 1, it should be single page app, and using fetch/ajax it will send A
 ## **Sources**
 ### Understanding Resolume UI, API
 Resolume API reference: https://resolume.com/docs/restapi/
+
 Tutorial Resolume videos: https://resolume.com/training
 
 **[⬆ back to top](#table-of-contents)**
