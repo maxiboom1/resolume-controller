@@ -32,8 +32,9 @@ First, lets characterize the app features:
 5. When the user click "Add" (submit) button, the preset, item name, media will be added to playlist. Also, "Add" action will cue the media on precofigured range of clip slots, say 3-20 - that means the app will manage those media slots automatically. 
 6. Each lineup item can be removed - it also uncue media in Resolume.
 7. The app will have playlist control interface - GTOT START, PLAY, PREV, NEXT. 
-8. Resolume API provide url with media thumbnail to each cued clip - so we need to include that thumbnail for each playlist item.
-9. Resolume have limitation - you cannot edit not active deck - so we need to handle case that deck has been changed from resolume UI - in that case we need to notice warning msg in our app.
+8. The playlist will select whole list row on click. On double-click it will play the item.
+9. Resolume API provide url with media thumbnail to each cued clip - so we need to include that thumbnail for each playlist item.
+10. Resolume have limitation - you cannot edit not active deck - so we need to handle case that deck has been changed from resolume UI - in that case we need to notice warning msg in our app.
 
 EXTRA:
 1. Preconfigured presets
