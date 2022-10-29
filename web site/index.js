@@ -4,6 +4,8 @@ const table = document.querySelector('tbody');
 const selected = table.getElementsByClassName('selected');
 selectDecks.addEventListener('change', handleDeckSelect);
 table.addEventListener('click',highlight);
+table.addEventListener('dblclick',handlePlay);
+
 document.querySelector("form").addEventListener('submit', handleSubmit);
 let playlist = [];
 
@@ -54,12 +56,30 @@ function parseFormData(event){
 }
 
 function addToPlaylist(item){
-  console.log(item); // {item_name: '', preset_selector: '', form_file: ''}
+  //console.log(item); // {item_name: '', preset_selector: '', form_file: ''}
   const mediaPosition = assignClipPosition(item); // find position for the new item
   updatePlaylistArray(item,mediaPosition);
   cueMediaclip(item,mediaPosition);
-  //Render table 
-  //fetch thumbnail && render it
+  setTimeout(renderTable,1000)
+}
+
+function renderTable(){
+  
+  const div = document.createElement('div');
+  div.classList.add('dynamic_table')
+
+  let rowHtml = '';
+  for(const row of playlist){
+    rowHtml += `<tr>
+    <th scope="row"><img src="http://localhost:8080/api/v1/composition/layers/${row.preset_selector}/clips/${row.clip_index}/thumbnail" width="100" alt="img"></th>
+    <td>${row.item_name}</td>
+    <td>${presets[row.preset_selector-1]}</td>
+    <td>Clip#: ${row.clip_index}</td>
+    <td>remove</td>
+    </tr>`;
+  }
+  document.querySelector('.tbody_table').innerHTML = rowHtml;
+ 
 }
 
 function updatePlaylistArray(item,mediaPosition){
@@ -103,19 +123,28 @@ function assignClipPosition(newItem){
 
 // ---------------- table selection ---------------- //
 function highlight(e) {
-  
-  if(e.target.parentNode.nodeName != "TABLE"){ //all rows select bug handler
+  const node = e.target.parentNode;  
+
+  if(node.nodeName != "TABLE" && node.nodeName != "TH"){ //all rows select bug handler && click on img handle
     
     if (selected[0]) { // handle first selection, while select class doen't assign 
       selected[0].className = '';
     } 
     
-    e.target.parentNode.className = 'selected';
+    node.className = 'selected';
   
   }
 
 }
 
+function handlePlay(e){
+  
+  const layer = presets.indexOf(e.target.parentNode.childNodes[5].innerText) + 1
+  const clip = e.target.parentNode.childNodes[7].innerText.slice(-2);
+  console.log('layer: ' + layer)
+  console.log('clip: ' + clip)
+
+}
 // ---------------- Deck selection ---------------- //
 
 function handleDeckSelect(event){

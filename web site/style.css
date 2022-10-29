@@ -48,7 +48,7 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
 /* ----------------- PLAYLIST ----------------- */
 
 .playlist{
-  width: 1388px;
+  width: 1410px;
   height: 890px;
   background-color: rgb(80, 78, 78);
   color: rgba(240, 248, 255, 0.856);
@@ -60,7 +60,8 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
 table {
   width: 100%;
   height: auto ; 
-  background-color: rgb(150, 134, 116);   
+  background-color: rgb(150, 134, 116); 
+  user-select: none;  
 }
  table tr {
   height: 100px;
