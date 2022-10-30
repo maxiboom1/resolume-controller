@@ -73,10 +73,7 @@ body{margin:0px; font-family: 'Courier New', Courier, monospace;}
 
 .footer span{line-height: 27px;} 
 
-table {
-    /* margin-left:10px; */
-    height: 300px ;    
-}
+
 
 .control_buttons{
     position: absolute;
