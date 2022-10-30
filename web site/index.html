@@ -1,30 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="style.css">
-    <title>mockup</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>mockup</title>
+
 </head>
+
 <body>
-    <div class="header">
-        <span>Resolume controller v. 1.0</span>
+  <div class="header">
+    <span>Resolume controller v. 1.0</span>
+  </div>
+
+  <div class="selections">
+    <h4>Create new item</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="deck_selector">Select program (deck)</label>
+        <div class="decks">
+          <select class="form-select" id="deck_selector" name="deck_selector"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="item_name">Item name</label>
+          <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Enter item name">
+        </div>
+
+        <div class="form-group">
+          <label for="preset_selector">Select preset</label>
+          
+          <div class="presets_container">
+          <select class="form-select" id="preset_selector" name="preset_selector">
+          </select>
+          </div>
+          
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="form_file" class="form-label">Choose media</label>
+              <input class="form-control" type="file" name="form_file" id="form_file">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <div class="control_buttons">
+      <button>Play</button>
+      <button>Add</button>
+      <button>Next</button>
+      <button>Prev</button>
     </div>
-    
-    <div class="selections">
-      <h5>Select deck</h5>
-      <div class="decks">
-        <select class="form-select form-select-sm mb-3"></select>
-      </div>  
-    </div>
+  </div>
 
     <div class="playlist">
+        <span>playlist</span>
         
-        <table class="table table-hover">
-            <thead >
+        <table class="table">
+            <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">First</th>
@@ -32,25 +71,7 @@
                 <th scope="col">Handle</th>
               </tr>
             </thead>
-            <tbody class="table-group-divider">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
+            <tbody>
               <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
@@ -79,28 +100,30 @@
         </div>  
     </div>
 
-    <div class="footer">
-     <span>footer</span>   
-    </div>
-    
-    <div class="fs_tree">
-    <ul id="myUL">
-        <li>File</li>
-        <li><span class="caret">Beverages</span>
-          <ul class="nested">
-            <li>Water</li>
-            <li>Coffee</li>
-          </ul>
-        </li>
-        <li><span class="caret">Beverages</span>
-            <ul class="nested">
-              <li>Water</li>
-              <li>Coffee</li>
-            </ul>
-          </li>
-      </ul>
-    </div>
+  <div class="footer">
+    <span>Status:</span>
+  </div>
 
-    <script src="index.js"></script>
+  <div class="fs_tree">
+    <ul id="myUL">
+      <li>File</li>
+      <li><span class="caret">Beverages</span>
+        <ul class="nested">
+          <li>Water</li>
+          <li>Coffee</li>
+        </ul>
+      </li>
+      <li><span class="caret">Beverages</span>
+        <ul class="nested">
+          <li>Water</li>
+          <li>Coffee</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
