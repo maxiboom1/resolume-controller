@@ -1,4 +1,3 @@
-
 /* ----------------- GENERAL ----------------- */
 
 body{margin:0px; font-family: 'Courier New', Courier, monospace;}
@@ -87,9 +86,30 @@ thead tr{
 
 .footer span{line-height: 27px;} 
 
-table {
-    /* margin-left:10px; */
-    height: 300px ;    
+/* ----------------- FS TREE ----------------- */
+
+.fs_tree{
+  display: none;
+}
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
 }
 
 .caret-down::before {
@@ -109,4 +129,3 @@ table {
     color:azure !important;
     background-color: rgb(49, 48, 48) !important;
 } */
-
