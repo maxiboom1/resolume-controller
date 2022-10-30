@@ -16,8 +16,8 @@ Our goal here is to create an intuitive and simple tool to manage media on diffe
 **[⬆ back to top](#table-of-contents)**
 
 ## Resolume_basics
-### Understanding Decks, columns, layers and clips
-Resolume can have unlimited numbers of decks. Each deck is like new instance of program (like new tab in browsers). So, using decks we can manage differend shows and media sets. Each layer can be connected to different output, and generally used to play clips to some screen, or part of screen (window in screen). 
+### Understanding Decks, Columns, Layers and Clips
+Resolume can have unlimited numbers of decks. Each deck is new tab in program. So, using decks we can manage different shows and media sets. Each layer can be connected to different output, and generally used to play clips to some screen, or part of screen (window in screen). 
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -40,8 +40,8 @@ First, lets characterize the app features:
 ### Extra features:
 1. Preconfigured presets
 2. Integration with newsroom production systems - Avid Inews, Ross Inception, Octopus.
-3. Config page - with Resolume addres field, clip range setting, media folder URL, new template create etc...
-4. View the files in media folder as tree (without selecting files from "choose file" html form element). P 
+3. Config page - with Resolume address field, clip range setting, media folder URL, new template create etc...
+4. View the files in media folder as tree (without selecting files from "choose file" html form element).
 5. Do the same app with node.js/react.
 
 For version 1, I will create single page app, 
