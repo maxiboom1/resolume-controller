@@ -1,4 +1,4 @@
-const RESOLUME_ADDR = "localhost";
+const RESOLUME_ADDR = "192.168.1.76";
 const MEDIA_FOLDER = 'file:///C:/media/';
 const CLIP_RANGE_START = 3;
 

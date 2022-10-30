@@ -71,7 +71,7 @@ function renderTable(){
   let rowHtml = '';
   for(const row of playlist){
     rowHtml += `<tr>
-    <th scope="row"><img src="http://localhost:8080/api/v1/composition/layers/${row.preset_selector}/clips/${row.clip_index}/thumbnail" width="100" alt="img"></th>
+    <th scope="row"><img src="http://${RESOLUME_ADDR}:8080/api/v1/composition/layers/${row.preset_selector}/clips/${row.clip_index}/thumbnail" width="100" alt="img"></th>
     <td>${row.item_name}</td>
     <td>${presets[row.preset_selector-1]}</td>
     <td>Clip#: ${row.clip_index}</td>
@@ -87,7 +87,7 @@ function updatePlaylistArray(item,mediaPosition){
 }
 
 function cueMediaclip(item,mediaPosition){
-  postRequest('http://localhost:8080/api/v1/composition/layers/' + item.preset_selector + '/clips/' + mediaPosition + '/open', MEDIA_FOLDER + item.form_file);
+  postRequest('http://' + RESOLUME_ADDR + ':8080/api/v1/composition/layers/' + item.preset_selector + '/clips/' + mediaPosition + '/open', MEDIA_FOLDER + item.form_file);
 }
 
 function assignClipPosition(newItem){
@@ -149,7 +149,7 @@ function handlePlay(e){
 
 function handleDeckSelect(event){
 console.log(event.target.value)
-postRequest('http://localhost:8080/api/v1/composition/decks/' + event.target.value + '/select');
+postRequest('http://' + RESOLUME_ADDR + ':8080/api/v1/composition/decks/' + event.target.value + '/select');
 }
 
 function getRequest(url){
@@ -207,6 +207,7 @@ function postRequest(url, body = ''){
     console.log(this.responseText);
   }
   xhttp.open("POST", url);
+  //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(body);
 }
 
