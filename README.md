@@ -11,7 +11,7 @@
 ### Simple way to create playlists in resolume
 Resolume is a popular VJ (video  mixing && realtime visual performance instrument) software. In TV broadcast, it's usually used to stream videos to video walls on set, and dynamically change them. In general, Resolume UI in those use cases is complicated, operations like mounting new media clips are risky, and operator mistakes may cause video walls to lose signals, turn to black etc... We preffer not to use the native UI to operate Resolume in those scenarios. 
 
-Our goal here is to create an intuitive and simple tool to manage media on different Resolume decks and layers, cue clips and create a complex rundown list (table) to manage the Resolume clips change from one place. Thanks to Resolume v. 7, we have now REST API and it is possible to trigger all those actions.
+Our goal here is to create an intuitive and simple tool to manage and mount/unmount media on different Resolume decks and layers, cue clips and create a complex rundown list (table) to manage the Resolume clips change from one place. Thanks to Resolume v. 7, we have now REST API and it is possible to trigger all those actions.
 
 **[⬆ back to top](#table-of-contents)**
 
